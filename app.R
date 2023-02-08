@@ -1,8 +1,5 @@
 library(fs)
 #fs::dir_copy("/home/diego/deumatchnapesquisa/base_dados/", "/srv/shiny-server/")
-#fs::dir_copy("/home/diego/deumatchnapesquisa/chave_secreta/", "/srv/shiny-server/")
-#fs::dir_copy("/home/diego/deumatchnapesquisa/www/", "/srv/shiny-server/")
-#fs::dir_copy("/home/diego/deumatchnapesquisa/hello/", "/srv/shiny-server/")
 #fs::file_delete("/srv/shiny-server/app.R")
 #fs::file_copy("/home/diego/deumatchnapesquisa/app.R", "/srv/shiny-server/")
 #sudo chmod -R 777 /srv/shiny-server
