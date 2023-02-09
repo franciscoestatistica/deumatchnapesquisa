@@ -294,15 +294,25 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU / EBSERH", align="center") ),
                              br(),br(),
                              
-                             h4("O projeto DeuMatchNaPesquisa.com surgiu a partir da observação de que muitos estudantes tinham ideias de pesquisa, porém não possuiam expertise para desenvolver."),                             
+                             span("O projeto DeuMatchNaPesquisa.com surgiu a partir da observação de que muitos estudantes tinham 
+                                  ideias de pesquisa, porém não possuiam expertise para desenvolvê-las."),br(),br(),
                              
-                             h4("Nosso objetivo é conectar estudantes e mentores/orientadores.",br(),"Portanto se você é um profissional com interesse mentorar ou orientar projetos, preencha o formulário abaixo:"),
+                             span("A partir dessa observação, buscamos desenvolver uma plataforma que conectasse estaudantes/alunos 
+                                  a possíveis mentores/orientadores ou profissionais com experiência e interesse em auxiliar 
+                                  projetos de pesquisa."),br(),br(),
                              
-                             h4(tags$a(href="http://bit.ly/pesquisadores-hc-ufu", "http://bit.ly/pesquisadores-hc-ufu"), align="center"),
+                             span("O DeuMatchNaPesquisa.com funciona utilizando técnicas de 'text mining' entre os termos inseridos 
+                                  na caixa de 'objetivos do projeto' e o conteúdo registrado no currículo Lattes dos pesquisadores."),br(),br(),
                              
-                             span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve você aparecerá aqui."),
+                             span("Então o resultado do cruzamento é expresso na coluna 'COMPATIBILIDADE', que é um valor percentual. 
+                                  Quanto maior a 'COMPATIBILIADE', maior a afinidade do pesquisador com os 'objetivos do projeto'."),br(),br(),
                              
-                             
+                             span("O Algorítmo, realiza a leitura de diversos campos do Lattes, incluindo: articos publicados, 
+                                  capítulos e livros publicados, palestras proferidas, apresentação de trabalhos e inclusive 
+                                  o resumo do currículo. Todos esses dados são padronizados, traduzidos para o português 
+                                  e então a partir dessa base é calculado a 'COMPATIBILIDADE'."),br(),br(),
+
+                             span("Qualquer dúvida ou maiores informações, a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH está a disposição."),
                            ) ),
                   
                   tabPanel("Contato", icon = icon("headset"),
