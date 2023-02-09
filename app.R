@@ -271,7 +271,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                withLoader( DT::dataTableOutput('table'), type = "html", "loader5") ),
                            ) ),
                   
-                  tabPanel("É Pesquisador? Se cadastre", icon = icon("user-plus", "fa"),
+                  tabPanel("É Pesquisador? Se cadastre", icon = icon("book-open-reader", "fa"),
                            mainPanel(
                              tags$figure(
                                align = "center",
