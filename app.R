@@ -249,7 +249,7 @@ limpa_texto <- function(vetor_txt_bruto) {
   vetor_final }
 
 ui <- navbarPage( theme = shinytheme("spacelab"),
-                  title = span(id="logo", tags$a(href="/#", span(id="logo", "DeuMatchNaPesquisa"))), 
+                  title = span(id="logo", tags$a(href="http://deumatchnapesquisa.com/", span(id="logo", "DeuMatchNaPesquisa"))), 
                   windowTitle="DeuMatchNaPesquisa", responsive = NULL, collapsible = TRUE,
                   
                   tabPanel("Pesquisar",icon = icon("search-plus"),
@@ -286,10 +286,25 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              
                            ) ),
 
+                  tabPanel("Sobre o Projeto", icon = icon("users"),
+                           mainPanel(
+                             tags$figure(
+                               align = "center",
+                               tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width="200px", alt = "DeuMatchNaPesquisa", align="center"),br(),br(),
+                               tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU / EBSERH", align="center") ),
+                             br(),br(),
+                             
+                             h4("O projeto DeuMatchNaPesquisa.com surgiu a partir da observação de que muitos estudantes tinham ideias de pesquisa, porém não possuiam expertise para desenvolver."),                             
+                             
+                             h4("Nosso objetivo é conectar estudantes e mentores/orientadores.",br(),"Portanto se você é um profissional com interesse mentorar ou orientar projetos, preencha o formulário abaixo:"),
+                             
+                             h4(tags$a(href="http://bit.ly/pesquisadores-hc-ufu", "http://bit.ly/pesquisadores-hc-ufu"), align="center"),
+                             
+                             span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve você aparecerá aqui."),
+                             
+                             
+                           ) ),
                   
-                  
-                  
-                  tabPanel("Sobre o Projeto", icon = icon("users")),
                   tabPanel("Contato", icon = icon("headset"),
                            mainPanel(
                              tags$figure(
