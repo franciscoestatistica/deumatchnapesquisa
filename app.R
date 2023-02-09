@@ -6,6 +6,10 @@ library(fs)
 #sudo service nginx start
 #sudo systemctl restart shiny-server
 
+#NA PASTA SHINY-SERVER, FAZER OS LINKS SIMBÓLICOS
+#sudo ln -s /home/diego/deumatchnapesquisa/app.R app.R
+#sudo ln -s /home/diego/deumatchnapesquisa/base_dados base_dados
+
 library(readr)
 library(tm)
 library(shiny)
@@ -263,7 +267,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                #img(src='logo.png', align = "right"),
                                tags$figure(
                                  align = "center",
-                                 tags$img(src = "https://i.ibb.co/1Qv0pxM/logo.png", width = 200, alt = "DeuMatchNaPesquisa"),
+                                 tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width = 200, alt = "DeuMatchNaPesquisa"),
                                  #tags$figcaption("Image of Astragalus by Yaan, 2007") 
                                ),
                                
