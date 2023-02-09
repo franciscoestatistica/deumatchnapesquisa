@@ -277,11 +277,12 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                align = "center",
                                tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width="200px", alt = "DeuMatchNaPesquisa", align="center"),br(),br(),
                                tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU/EBSERH", align="center") ),
-                             br(),br(),span("Nosso objetivo é conectar estudantes e mentores/orientadores.",br(),"Portanto se você é um profissional com interesse mentorar ou orientar projetos, preencha o formulário abaixo:"),
+                             br(),br(),span("Nosso objetivo é conectar estudantes e mentores/orientadores.",br(),
+                                            "Portanto, se você é um profissional com interesse mentorar ou orientar projetos, preencha o formulário abaixo:"),
                              
                             h4(tags$a(href="http://bit.ly/pesquisadores-hc-ufu", "http://bit.ly/pesquisadores-hc-ufu"), align="center"),
 
-                            span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve aparecerá aqui."),
+                            span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, receberá sua resposta e em breve aparecerá aqui."),
                              
                              
                            ) ),
@@ -310,7 +311,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              span("O algoritmo, realiza a leitura de diversos campos do Lattes, incluindo: artigos publicados, 
                                   capítulos e livros publicados, palestras proferidas, apresentação de trabalhos e inclusive 
                                   o resumo do currículo. Todos esses dados são padronizados, traduzidos para o português 
-                                  e então a partir dessa base, é calculada a 'COMPATIBILIDADE'."),br(),br(),
+                                  e então, a partir dessa base, é calculada a 'COMPATIBILIDADE'."),br(),br(),
 
                              span("Qualquer dúvida ou maiores informações, a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH está à disposição."),
                            ) ),
