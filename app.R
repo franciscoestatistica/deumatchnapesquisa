@@ -263,12 +263,9 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              ),
                              
                              mainPanel(
-                               #img(src=as.String(paste0(here(),'/www/logo.png')), align = "center"),
-                               #img(src='logo.png', align = "right"),
                                tags$figure(
                                  align = "center",
                                  tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width = 200, alt = "DeuMatchNaPesquisa"),
-                                 #tags$figcaption("Image of Astragalus by Yaan, 2007") 
                                ),
                                
                                withLoader( DT::dataTableOutput('table'), type = "html", "loader5") ),
@@ -276,9 +273,31 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                   
                   tabPanel("Como funciona?", icon = icon("question")),
                   tabPanel("Sobre", icon = icon("users")),
-                  tabPanel("Contato", icon = icon("headset")),
-                  
-)
+                  tabPanel("Contato", icon = icon("headset"),
+                           mainPanel(
+                             tags$figure(
+                               align = "center",
+                               tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width="200px", alt = "DeuMatchNaPesquisa", align="center"),br(),br(),
+                               tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU / EBSERH", align="center") ),
+                                br(),br(),h4("Entre em contato com a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH"),
+
+                             tags$table(
+                               style = "width:100%",
+                               tags$tr(
+                                 tags$th("Whatsapp"),
+                                 tags$td( tags$a(href=" https://wa.me/553432182323?text=Estou%20escrevendo%20para%20falar%20sobre%20o%20DEUMATCHNAPESQUISA.COM", "(34)3218-2323")) ),
+                               tags$tr(
+                                 tags$th("Email"),
+                                 tags$td( tags$a(href="mailto:francisco.negrao@ebserh.gov.br", "francisco.negrao@ebserh.gov.br")) ),br(),
+                             tags$tr(
+                               tags$th("Endereço"),
+                               tags$td(span("BLOCO 8F - R. República do Piratini, 1418"),br(),
+                                       span("Umuarama, Uberlândia - MG, 38402-028 • Brasil"))  ) ),br(),
+                             
+                             span("Estamos guardando seu contato!"),
+                             
+                             
+                             ) ) )
 
 
 server <- function(input, output) {
