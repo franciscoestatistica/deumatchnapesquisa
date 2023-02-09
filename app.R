@@ -295,9 +295,9 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              br(),br(),
                              
                              span("O projeto DeuMatchNaPesquisa.com surgiu a partir da observação de que muitos estudantes tinham 
-                                  ideias de pesquisa, porém não possuiam expertise para desenvolvê-las."),br(),br(),
+                                  ideias de pesquisa, porém não possuíam expertise para desenvolvê-las."),br(),br(),
                              
-                             span("A partir dessa observação, buscamos desenvolver uma plataforma que conectasse estaudantes/alunos 
+                             span("A partir dessa observação, buscamos desenvolver uma plataforma que conectasse estudantes/alunos 
                                   a possíveis mentores/orientadores ou profissionais com experiência e interesse em auxiliar 
                                   projetos de pesquisa."),br(),br(),
                              
@@ -307,12 +307,12 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              span("Então o resultado do cruzamento é expresso na coluna 'COMPATIBILIDADE', que é um valor percentual. 
                                   Quanto maior a 'COMPATIBILIADE', maior a afinidade do pesquisador com os 'objetivos do projeto'."),br(),br(),
                              
-                             span("O Algorítmo, realiza a leitura de diversos campos do Lattes, incluindo: articos publicados, 
+                             span("O algoritmo, realiza a leitura de diversos campos do Lattes, incluindo: artigos publicados, 
                                   capítulos e livros publicados, palestras proferidas, apresentação de trabalhos e inclusive 
                                   o resumo do currículo. Todos esses dados são padronizados, traduzidos para o português 
-                                  e então a partir dessa base é calculado a 'COMPATIBILIDADE'."),br(),br(),
+                                  e então a partir dessa base, é calculada a 'COMPATIBILIDADE'."),br(),br(),
 
-                             span("Qualquer dúvida ou maiores informações, a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH está a disposição."),
+                             span("Qualquer dúvida ou maiores informações, a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH está à disposição."),
                            ) ),
                   
                   tabPanel("Contato", icon = icon("headset"),
