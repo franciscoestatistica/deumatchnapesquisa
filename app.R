@@ -271,8 +271,25 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                withLoader( DT::dataTableOutput('table'), type = "html", "loader5") ),
                            ) ),
                   
-                  tabPanel("Como funciona?", icon = icon("question")),
-                  tabPanel("Sobre", icon = icon("users")),
+                  tabPanel("É Pesquisador? Se cadastre", icon = icon("user-plus", "fa"),
+                           mainPanel(
+                             tags$figure(
+                               align = "center",
+                               tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width="200px", alt = "DeuMatchNaPesquisa", align="center"),br(),br(),
+                               tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU / EBSERH", align="center") ),
+                             br(),br(),h4("Nosso objetivo é conectar estudantes e mentores/orientadores.",br(),"Portanto se você é um profissional com interesse mentorar ou orientar projetos, preencha o formulário abaixo:"),
+                             
+                            h4(tags$a(href="http://bit.ly/pesquisadores-hc-ufu", "http://bit.ly/pesquisadores-hc-ufu"), align="center"),
+
+                             span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve você aparecerá aqui."),
+                             
+                             
+                           ) ),
+
+                  
+                  
+                  
+                  tabPanel("Sobre o Projeto", icon = icon("users")),
                   tabPanel("Contato", icon = icon("headset"),
                            mainPanel(
                              tags$figure(
@@ -285,7 +302,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                style = "width:100%",
                                tags$tr(
                                  tags$th("Whatsapp"),
-                                 tags$td( tags$a(href=" https://wa.me/553432182323?text=Estou%20escrevendo%20para%20falar%20sobre%20o%20DEUMATCHNAPESQUISA.COM", "(34)3218-2323")) ),
+                                 tags$td( tags$a(href="https://wa.me/553432182323?text=Estou%20escrevendo%20para%20falar%20sobre%20o%20DEUMATCHNAPESQUISA.COM", "(34)3218-2323")) ),
                                tags$tr(
                                  tags$th("Email"),
                                  tags$td( tags$a(href="mailto:francisco.negrao@ebserh.gov.br", "francisco.negrao@ebserh.gov.br")) ),br(),
