@@ -321,7 +321,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                                align = "center",
                                tags$img(src = "https://i.ibb.co/4N9y2mX/logo.png", width="200px", alt = "DeuMatchNaPesquisa", align="center"),br(),br(),
                                tags$img(src = "https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-ufu/logos/hc-ufu-assinatura.png", width = "400px", alt = "HC-UFU / EBSERH", align="center") ),
-                                br(),br(),span("Entre em contato com a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH"),br(),
+                                br(),br(),span("Entre em contato com a Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do HC-UFU/EBSERH."),br(),
 
                              tags$table(
                                style = "width:100%",
