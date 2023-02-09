@@ -281,7 +281,7 @@ ui <- navbarPage( theme = shinytheme("spacelab"),
                              
                             h4(tags$a(href="http://bit.ly/pesquisadores-hc-ufu", "http://bit.ly/pesquisadores-hc-ufu"), align="center"),
 
-                             span("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve você aparecerá aqui."),
+                            h4("A Unidade de Gestão da Inovação Tecnológica em Saúde - UGITS do  HC-UFU/EBSERH, vai receber sua resposta e em breve aparecerá aqui."),
                              
                              
                            ) ),
