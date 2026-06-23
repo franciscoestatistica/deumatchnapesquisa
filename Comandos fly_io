@@ -1,0 +1,234 @@
+# 🚀 Comandos Essenciais do Fly.io (flyctl)
+
+## 🔐 **1. AUTENTICAÇÃO & SETUP**
+```bash
+# Login inicial (abre navegador)
+flyctl auth login
+
+# Verificar se está logado
+flyctl auth whoami
+
+# Logout
+flyctl auth logout
+
+# Verificar versão do flyctl
+flyctl version
+```
+
+## 📱 **2. APLICAÇÕES - GESTÃO BÁSICA**
+```bash
+# Listar todas suas aplicações
+flyctl apps list
+
+# Ver detalhes de uma aplicação específica
+flyctl status -a deumatchnapesquisa
+
+# Ver informações completas do app
+flyctl info -a deumatchnapesquisa
+
+# Abrir aplicação no navegador
+flyctl open -a deumatchnapesquisa
+```
+
+## 🚀 **3. DEPLOY & ATUALIZAÇÕES**
+```bash
+# Deploy inicial (primeira vez)
+flyctl launch
+
+# Deploy/atualizar após mudanças no código
+flyctl deploy
+
+# Deploy especificando o app (se estiver em outra pasta)
+flyctl deploy -a deumatchnapesquisa
+
+# Deploy forçado (rebuild completo)
+flyctl deploy --no-cache
+
+# Deploy com configuração específica
+flyctl deploy --dockerfile Dockerfile
+```
+
+## 📊 **4. MONITORAMENTO & LOGS**
+```bash
+# Ver logs em tempo real
+flyctl logs -a deumatchnapesquisa
+
+# Ver logs das últimas 24h
+flyctl logs -a deumatchnapesquisa --since 24h
+
+# Ver apenas logs de erro
+flyctl logs -a deumatchnapesquisa --level error
+
+# Verificar saúde da aplicação
+flyctl checks list -a deumatchnapesquisa
+
+# Ver métricas de uso
+flyctl metrics -a deumatchnapesquisa
+```
+
+## 🔧 **5. CONFIGURAÇÃO & ENVIRONMENT**
+```bash
+# Ver variáveis de ambiente
+flyctl secrets list -a deumatchnapesquisa
+
+# Adicionar variável de ambiente/secret
+flyctl secrets set DATABASE_URL="sua-url" -a deumatchnapesquisa
+
+# Remover secret
+flyctl secrets unset DATABASE_URL -a deumatchnapesquisa
+
+# Editar configuração fly.toml
+flyctl config edit -a deumatchnapesquisa
+
+# Validar configuração
+flyctl config validate
+```
+
+## 🏃‍♂️ **6. MÁQUINAS & SCALING**
+```bash
+# Listar máquinas da aplicação
+flyctl machines list -a deumatchnapesquisa
+
+# Parar aplicação (todas as máquinas)
+flyctl apps suspend -a deumatchnapesquisa
+
+# Religar aplicação
+flyctl apps resume -a deumatchnapesquisa
+
+# Escalar aplicação (aumentar/diminuir recursos)
+flyctl scale count 2 -a deumatchnapesquisa
+
+# Escalar memória
+flyctl scale memory 512 -a deumatchnapesquisa
+
+# Reiniciar aplicação
+flyctl apps restart -a deumatchnapesquisa
+```
+
+## 🗂️ **7. VOLUMES & STORAGE**
+```bash
+# Listar volumes
+flyctl volumes list -a deumatchnapesquisa
+
+# Criar volume
+flyctl volumes create data --region gru -a deumatchnapesquisa
+
+# Ver uso de storage
+flyctl volumes show vol_abc123 -a deumatchnapesquisa
+```
+
+## 🌐 **8. DOMÍNIOS & CERTIFICADOS**
+```bash
+# Listar domínios
+flyctl certs list -a deumatchnapesquisa
+
+# Adicionar domínio personalizado
+flyctl certs add meudominio.com -a deumatchnapesquisa
+
+# Ver status do certificado SSL
+flyctl certs show meudominio.com -a deumatchnapesquisa
+
+# Ver IPs da aplicação
+flyctl ips list -a deumatchnapesquisa
+```
+
+## 💸 **9. BILLING & USAGE**
+```bash
+# Ver uso atual e custos
+flyctl orgs billing
+
+# Ver histórico de billing
+flyctl orgs billing history
+
+# Configurar alerta de billing
+flyctl orgs billing-alerts create --threshold 10
+
+# Ver organizações
+flyctl orgs list
+```
+
+## ⚠️ **10. TROUBLESHOOTING**
+```bash
+# Conectar via SSH na máquina
+flyctl ssh console -a deumatchnapesquisa
+
+# Executar comando específico
+flyctl ssh shell -a deumatchnapesquisa
+
+# Ver processos rodando
+flyctl ssh shell -C "ps aux" -a deumatchnapesquisa
+
+# Debug de conectividade
+flyctl ping -a deumatchnapesquisa
+
+# Ver configuração atual
+flyctl config show -a deumatchnapesquisa
+```
+
+## 🗑️ **11. REMOÇÃO & LIMPEZA**
+```bash
+# Destruir aplicação (CUIDADO!)
+flyctl apps destroy deumatchnapesquisa
+
+# Remover máquina específica
+flyctl machines destroy MACHINE_ID -a deumatchnapesquisa
+
+# Limpar deployments antigos
+flyctl releases list -a deumatchnapesquisa
+```
+
+## 🔄 **12. WORKFLOWS COMUNS**
+
+### **Workflow de desenvolvimento típico:**
+```bash
+# 1. Fazer mudanças no código
+git add .
+git commit -m "Nova feature"
+git push origin main
+
+# 2. Deploy no Fly.io
+flyctl deploy -a deumatchnapesquisa
+
+# 3. Verificar se funcionou
+flyctl logs -a deumatchnapesquisa
+flyctl open -a deumatchnapesquisa
+```
+
+### **Troubleshooting rápido:**
+```bash
+# Se algo não funciona:
+flyctl status -a deumatchnapesquisa
+flyctl logs -a deumatchnapesquisa
+flyctl checks list -a deumatchnapesquisa
+
+# Se precisar reiniciar:
+flyctl apps restart -a deumatchnapesquisa
+```
+
+### **Emergency commands:**
+```bash
+# App travado? Force restart
+flyctl machines restart --force -a deumatchnapesquisa
+
+# App com problema? Ver logs detalhados
+flyctl logs -a deumatchnapesquisa --since 1h
+
+# Rollback para deploy anterior
+flyctl releases list -a deumatchnapesquisa
+flyctl releases rollback VERSION -a deumatchnapesquisa
+```
+
+## 💡 **DICAS IMPORTANTES:**
+
+1. **Auto-deploy**: Para auto-deploy via GitHub, configure GitHub Actions
+2. **Sempre use `-a app-name`**: Para evitar erros se estiver em pasta diferente
+3. **Monitore custos**: `flyctl orgs billing` regularmente
+4. **Backup**: Sempre tenha backup dos secrets antes de modificar
+5. **Região**: Use `gru` (São Paulo) para melhor latência no Brasil
+
+## 🚨 **COMANDOS PERIGOSOS (cuidado!):**
+```bash
+flyctl apps destroy APP_NAME        # Deleta app permanentemente
+flyctl secrets unset SECRET_NAME    # Remove variável de ambiente
+flyctl volumes destroy VOLUME_ID    # Deleta dados permanentemente
+```

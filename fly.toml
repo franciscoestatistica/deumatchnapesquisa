@@ -1,0 +1,27 @@
+# fly.toml - Configuração do Fly.io
+app = 'deumatchnapesquisa'
+primary_region = 'gru'
+
+[build]
+
+[http_service]
+  internal_port = 3838
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+
+[checks]
+  [checks.health]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    path = "/"
+    port = 3838
+    timeout = "5s"
+    type = "http"

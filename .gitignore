@@ -1,0 +1,12 @@
+# Credenciais e deploy (NUNCA versionar — contêm token/secret)
+deploy.R
+deploy_log.txt
+rsconnect/
+
+# Arquivos de sessão do R
+.RData
+.Rhistory
+.Rproj.user/
+
+# Config local do Claude Code
+.claude/settings.local.json

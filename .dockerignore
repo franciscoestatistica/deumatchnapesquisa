@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+
+# R específico
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Documentação
+*.md
+*.pdf
+*.docx
+
+
+
+
+# Imagens e zips (se não precisar)
+#base_dados/imagens/
+#base_dados/lattes_zip/
+#base_dados/BACKUP_*
+#base_dados/PARA_TRADUZIR*
+
+# Logs
+*.log
