@@ -1,27 +1,32 @@
-# fly.toml - Configuração do Fly.io
-app = 'deumatchnapesquisa'
-primary_region = 'gru'
+# fly.toml app configuration file generated for deumatchnapesquisa-mqrzma on 2026-06-23T16:15:16Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'deumatchnapesquisa-mqrzma'
+primary_region = 'ams'
 
 [build]
 
 [http_service]
-  internal_port = 3838
+  internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
+
+[checks]
+  [checks.health]
+    port = 3838
+    type = 'http'
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    method = 'GET'
+    path = '/'
 
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-
-[checks]
-  [checks.health]
-    grace_period = "10s"
-    interval = "30s"
-    method = "GET"
-    path = "/"
-    port = 3838
-    timeout = "5s"
-    type = "http"
+  memory_mb = 256
